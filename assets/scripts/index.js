@@ -6,8 +6,10 @@
 // use require without a reference to ensure a file is bundled
 
 const authEvents = require('./auth/events.js');
+const choreEvents = require('./chore-api/chore-events.js');
 
 // On document ready
 $(() => {
   authEvents.addHandlers();
+  choreEvents.addHandlers();
 });
