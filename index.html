@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <title>Chore Tracker</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+
+            <!--NAVBAR STARTS-->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Chore Tracker</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left">
+              <div class="form-group">
+              </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up / Sign In <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a>
+                      <!-- Button trigger modal Sign Up -->
+                      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-up-form">
+                        Sign Up
+                      </button>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <!-- Button trigger modal Sign In -->
+                      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-in-form">
+                        Sign In
+                      </button>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <!-- Button trigger modal Change Password -->
+                      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#change-password-form">
+                        Change Password
+                      </button>
+                    </a>
+                </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <a>
+                      <!-- Button trigger modal LOG OUT -->
+                      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log-out">
+                        Log Out
+                      </button>
+                    </a
+                </li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <!--NAVBAR ENDS-->
+      <h1>Chore Tracker</h1>
+
+
+
+      <p>Hey! Welcome to Chore Tracker!</p>
+      <form>
+        <input type="text" placeholder="chore" id="make-chore">
+        <input type="submit" value="Submit">
+      </form>
+      <form>
+
+        <input type="text" placeholder="chore">
+        <input type="text" placeholder="due date">
+        <input type="text" placeholder="Difficulty, 1-5">
+        <input type="submit" value="Submit">
+      </form>
+
+
+      <!--SIGN UP MODAL-->
+<div class="modal fade" id="sign-up-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">SIGN UP DUMMY</h4>
+      </div>
+      <div class="modal-body">
+          <form class="sign-up-form">
+           <div class="form-group">
+             <label>Internet Mail Desired Location</label>
+             <input type="email" id="sign-up-email" class="form-control" name="credentials[email]" placeholder="Email">
+           </div>
+           <div class="form-group">
+             <label for="exampleInputPassword1">Fucking Password</label>
+             <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password]" placeholder="Password">
+           </div>
+           <div class="form-group">
+             <label for="exampleInputPassword1">Type It Again, Moron</label>
+             <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password_confirmation]" placeholder="Password">
+           </div>
+           <button type="submit" class="btn btn-default" id="sign-up-submit">Submit</button>
+           <button type="button" class="btn btn-default" data-dismiss="modal">Mistakes were made</button>
+          </form>
+          <div class="sign-up-fail"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!--END SIGN UP MODAL-->
+
+
+    <!--  SIGN IN MODAL-->
+    <div class="modal fade" id="sign-in-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">SIGN IN YOU BOZO</h4>
+    </div>
+    <div class="modal-body">
+        <form class="sign-in-form">
+         <div class="form-group">
+           <label> Current Address</label>
+           <input type="email" id="sign-in-email" class="form-control" name="credentials[email]" placeholder="Email">  <!--probably relevant for auth-->
+         </div>
+         <div class="form-group">
+           <label for="exampleInputPassword1">P-word</label>
+           <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password]" placeholder="Password">
+         </div>
+         <button type="submit" class="btn btn-default" id="sign-in-submit">S to the U to the B MIT!!</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Mistakes were made</button>
+        </form>
+        <div class="sign-in-fail"></div>
+    </div>
+  </div>
+</div>
+</div>
+  <!--END SIGN IN MODAL-->
+
+
+  <!--  CHANGE PASSWORD MODAL-->
+  <div class="modal fade" id="change-password-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">NO ONE CARES ABOUT YOUR DATA</h4>
+  </div>
+  <div class="modal-body">
+      <form class="change-password-form">
+       <div class="form-group">
+         <label>Old Insecure Password</label>
+         <input type="password" id="change-password" class="form-control" name="passwords[old]" placeholder="Old Password">  <!--probably relevant for auth-->
+       </div>
+       <div class="form-group">
+         <label for="exampleInputPassword1">New Easily Guessable Password</label>
+         <input type="password" class="form-control" id="exampleInputPassword1" name="passwords[new]" placeholder="New Password">
+       </div>
+       <button type="submit" class="btn btn-default" id="change-pw-submit">Submit-eroni</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Mistakes were made</button>
+      </form>
+      <div class="change-pw-fail"></div>
+  </div>
+</div>
+</div>
+</div>
+<!--END CHANGE PASSWORD MODAL-->
+
+<!--LOG OUT!!!!!!!!-->
+
+
+<div class="modal fade" id="log-out" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Good Riddance</h4>
+      </div>
+    <div class="modal-body">
+    <form class="log-out">
+     <button type="submit" class="btn btn-default">Yup, let me leave</button>
+     <button type="button" class="btn btn-default" data-dismiss="modal">Mistakes were made</button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+
+
+    </body>
+</html>
