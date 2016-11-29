@@ -81,14 +81,35 @@
 
       <p>Hey! Welcome to Chore Tracker!</p>
 
-      <form class="chore-submit">
-
-        <input type="text" placeholder="chore" name="chore[name]">
-        <input type="text" placeholder="due date" name=chore[due_date]>
-        <input type="text" placeholder="Difficulty, 1-5" name=chore[difficulty]>
+      <form class="group-submit">
+        <input type="text" placeholder="group" name="group[name]">
         <input type="submit" value="Submit">
       </form>
 
+      <br>
+
+      <form class="chore-submit">
+
+        <input type="text" placeholder="chore" name="chore[name]">
+        <input type="text" placeholder="due date" name="chore[due_date]">
+        <input type="text" placeholder="Difficulty, 1-5" name="chore[difficulty]">
+        <input type="submit" value="Submit">
+      </form>
+      <br>
+      <form class="chore-update">
+
+        <input type="text" placeholder="chore id" name="chore[chore_id]">
+        <input type="text" placeholder="chore" name="chore[name]">
+        <input type="text" placeholder="due date" name="chore[due_date]">
+        <input type="text" placeholder="Difficulty, 1-5" name="chore[difficulty]">
+        <input type="submit" value="Update">
+      </form>
+
+      <div class="chore-id"></div>
+      <div class="chore-name"></div>
+      <div class="chore-due"></div>
+      <div class="chore-difficulty"></div>
+      <div class="chore-assignment"></div>
 
 
       <!--SIGN UP MODAL-->
