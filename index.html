@@ -80,11 +80,12 @@
 
 
       <p>Hey! Welcome to Roomie!</p>
+      <div class="container">
 
-      <form class="group-submit">
+      <!--<form class="group-submit">
         <input type="text" placeholder="group" name="group[name]">
         <input type="submit" value="Submit">
-      </form>
+      </form> -->
 
       <br>
 
@@ -105,6 +106,13 @@
         <input type="submit" value="Update" id="chore-update">
       </form>
       <br>
+
+      <form class="chore-delete">
+
+        <input type="text" placeholder="chore id" name="chore[chore_id]">
+        <input type="submit" value="Delete" id="chore-delete">
+      </form>
+      <br>
 <button type="button" class="show-chores-button">Click Me!</button>
       <div class="chore-id"></div>
       <div class="chore-name"></div>
@@ -114,6 +122,7 @@
       <div class="chore-sum"></div>
 
       <div class="show-chores"></div>
+      </div>
 
 
       <!--SIGN UP MODAL-->

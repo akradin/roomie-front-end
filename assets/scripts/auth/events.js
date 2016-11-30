@@ -5,6 +5,8 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
+$('.container').hide()
+
 const onSignUp = function (event) {
   event.preventDefault();
   let data = getFormFields(this);

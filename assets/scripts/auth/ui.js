@@ -8,12 +8,15 @@ const success = (data) => {
   successError.authSuccess();
 };
 
+
+
 const failure = (error) => {
   console.log(error);
   successError.authFail();
 };
 
 const signInSuccess = (data) => {
+  $('.container').show();
   store.user = data.user;
   success(data);
 };

@@ -7,6 +7,9 @@ const createChore = (data) =>
   $.ajax({
     url: config.host + '/chores',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
     data,
   });
 
@@ -15,18 +18,35 @@ const updateChore = (data) =>
   $.ajax({
       url: config.host + '/chores/' + data.chore.chore_id,
       method: 'PATCH',
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+      data,
+    });
+
+const deleteChore = (data) =>
+  $.ajax({
+      url: config.host + '/chores/' + data.chore.chore_id,
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
       data,
     });
 
 const showChores = function(){
   $.ajax({
     url: config.host + '/chores',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
   });
 };
 
   module.exports ={
     createChore,
     updateChore,
-    showChores
+    showChores,
+    deleteChore
   };
