@@ -1,23 +1,28 @@
 'use strict';
 
-// let showData = function(data){
-//   for(let i in data){
-//     return i + ':' + data[i];
-//   }
-// };
 
-// $.each(data, function(key, value) {
-//     $('.chore').text(key, value);
-// });
+const createSuccess = (data) => {
+    console.log(data);
+    $('.chore-id').append("ID: " + " " + data.id + "<br>");
+    $('.chore-name').append("NAME: " + " " + data.name + "<br>");
+    $('.chore-due').append("DUE DATE: " + " " + data.due_date + "<br>" );
+    $('.chore-difficulty').append("DIFFICULTY: " + " " + data.difficulty + "<br>");
+
+};
+
+const updateSuccess = (data) =>{
+  // $('.chore-name').append("NAME: " + " " + data.name + "<br>");
+  // $('.chore-due').append("DUE DATE: " + " " + data.due_date + "<br>" );
+  // $('.chore-difficulty').append("DIFFICULTY: " + " " + data.difficulty + "<br>");
+  console.log(data);
+};
+
+const showSuccess = function(){
+  $('.show-chores').text('text');
+};
 
 const success = (data) => {
-    console.log(data);
-    $('.chore-id').append(data.chore.id + " ");
-    $('.chore-name').append(data.chore.name + " ");
-    $('.chore-due').append(data.chore.due_date + " ");
-    $('.chore-difficulty').append(data.chore.difficulty + " ");
-
-
+  console.log(data);
 };
 
 const failure = (error) => {
@@ -27,4 +32,7 @@ const failure = (error) => {
 module.exports = {
   success,
   failure,
+  updateSuccess,
+  createSuccess,
+  showSuccess
 };

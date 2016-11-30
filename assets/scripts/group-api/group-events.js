@@ -14,7 +14,7 @@ const onCreateGroup = function (event) {
 };
 
 
-const addHandlers = () => {
+const addHandlers = function(){
 $('.group-submit').on('submit', onCreateGroup);
 };
 

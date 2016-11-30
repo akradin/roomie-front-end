@@ -9,6 +9,6 @@ const createGroup = (data) =>
     data,
   });
 
-  module.exports ={
+  module.exports = {
     createGroup,
   };

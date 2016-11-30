@@ -10,14 +10,23 @@ const createChore = (data) =>
     data,
   });
 
+
 const updateChore = (data) =>
-    $.ajax({
-      url: config.host + '/chores/' ,
+  $.ajax({
+      url: config.host + '/chores/' + data.chore.chore_id,
       method: 'PATCH',
       data,
     });
 
+const showChores = function(){
+  $.ajax({
+    url: config.host + '/chores',
+    method: 'GET'
+  });
+};
+
   module.exports ={
     createChore,
-    updateChore
+    updateChore,
+    showChores
   };

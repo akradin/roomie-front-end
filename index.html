@@ -2,7 +2,7 @@
 <html>
     <head>
 
-      <title>Chore Tracker</title>
+      <title>Roomie</title>
 
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
@@ -22,7 +22,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Chore Tracker</a>
+            <a class="navbar-brand" href="#">Roomie</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,11 +75,11 @@
         </div><!-- /.container-fluid -->
       </nav>
       <!--NAVBAR ENDS-->
-      <h1>Chore Tracker</h1>
+      <h1>Roomie</h1>
 
 
 
-      <p>Hey! Welcome to Chore Tracker!</p>
+      <p>Hey! Welcome to Roomie!</p>
 
       <form class="group-submit">
         <input type="text" placeholder="group" name="group[name]">
@@ -102,14 +102,18 @@
         <input type="text" placeholder="chore" name="chore[name]">
         <input type="text" placeholder="due date" name="chore[due_date]">
         <input type="text" placeholder="Difficulty, 1-5" name="chore[difficulty]">
-        <input type="submit" value="Update">
+        <input type="submit" value="Update" id="chore-update">
       </form>
-
+      <br>
+<button type="button" class="show-chores-button">Click Me!</button>
       <div class="chore-id"></div>
       <div class="chore-name"></div>
       <div class="chore-due"></div>
       <div class="chore-difficulty"></div>
       <div class="chore-assignment"></div>
+      <div class="chore-sum"></div>
+
+      <div class="show-chores"></div>
 
 
       <!--SIGN UP MODAL-->
