@@ -33,7 +33,7 @@ const onDeleteChore = function (event){
   let data = getFormFields(this);
   event.preventDefault();
   api.deleteChore(data)
-  .then(ui.success)
+  .then(ui.deleteSuccess)
   .catch(ui.failure);
 };
 

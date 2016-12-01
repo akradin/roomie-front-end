@@ -5,6 +5,7 @@
 const createSuccess = (data) => {
     $('.show-chores').hide();
     $('.chore-id').show();
+    $('.chore-id').empty();
     $('.chore-name').show();
     $('.chore-due').show();
     $('.chore-difficulty').show();
@@ -15,7 +16,7 @@ const createSuccess = (data) => {
 
 };
 
-const updateSuccess = (data) =>{
+const updateSuccess = () =>{
   $('.update-chore').html('Chore updated! Click get chores for an updated list.');
 };
 
@@ -27,6 +28,7 @@ const showSuccess = function(data){
   for (let i = 0; i < data.chores.length; i++) {
      chores += "NAME: " + " " + data.chores[i].name + "<br>" + "ID: " + " "  + data.chores[i].id + "<br>" + "DUE DATE: " + " " + data.chores[i].due_date + "<br>" + "DIFFICULTY: " + " " + data.chores[i].difficulty + "<br>";
   }
+  $('.update-chore').hide();
   $('.show-chores').show();
   $('.show-chores').html(chores);
   $('.chore-id').hide();
@@ -35,16 +37,17 @@ const showSuccess = function(data){
   $('.chore-difficulty').hide();
 };
 
-const success = (data) => {
-
+const deleteSuccess = (data) => {
+  $('.chore-id').html('Gonzo!');
+  $('.update-chore').hide();;
 };
 
 const failure = (error) => {
-
+  $('.chore-id').html('Something is not quite right. Make sure you have filled out all forms with the correct format')
 };
 
 module.exports = {
-  success,
+  deleteSuccess,
   failure,
   updateSuccess,
   createSuccess,
