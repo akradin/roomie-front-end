@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields');
 const api = require('./chore-api.js');
 const ui = require('./chore-ui.js');
+const checkForms = require('./check-forms.js');
 
 // const store = require('../store');
 
@@ -10,8 +11,8 @@ const ui = require('./chore-ui.js');
 const onCreateChore = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
-  // console.log(data);
   api.createChore(data)
+
     .then(ui.createSuccess)
     .catch(ui.failure);
 };
@@ -20,6 +21,7 @@ const onUpdateChore = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
   // store.update_chore = data;
+  checkForms.checkSubmit();
   api.updateChore(data)
     .then(ui.updateSuccess)
     .catch(ui.failure);
