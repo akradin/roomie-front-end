@@ -4,6 +4,10 @@
 
 const createSuccess = (data) => {
     $('.show-chores').hide();
+    $('.chore-id').show();
+    $('.chore-name').show();
+    $('.chore-due').show();
+    $('.chore-difficulty').show();
     $('.chore-id').append("ID: " + " " + data.chore.id + "<br>");
     $('.chore-name').append("NAME: " + " " + data.chore.name + "<br>");
     $('.chore-due').append("DUE DATE: " + " " + data.chore.due_date + "<br>" );
