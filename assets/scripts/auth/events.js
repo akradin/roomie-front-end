@@ -7,6 +7,10 @@ const ui = require('./ui');
 
 $('.container').hide()
 
+// $(window).load(function(){
+//     $('#welcome-form').modal('show');
+// });
+
 const onSignUp = function (event) {
   event.preventDefault();
   let data = getFormFields(this);

@@ -17,8 +17,8 @@ const updateSuccess = (data) =>{
   console.log(data);
 };
 
-const showSuccess = function(){
-  $('.show-chores').text('text');
+const showSuccess = function(data){
+  console.log(data.chores);
 };
 
 const success = (data) => {

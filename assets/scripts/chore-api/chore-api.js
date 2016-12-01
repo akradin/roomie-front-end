@@ -34,7 +34,7 @@ const deleteChore = (data) =>
       data,
     });
 
-const showChores = function(){
+const showChores = () =>
   $.ajax({
     url: config.host + '/chores',
     method: 'GET',
@@ -42,7 +42,7 @@ const showChores = function(){
       Authorization: 'Token token=' + store.user.token,
     },
   });
-};
+
 
   module.exports ={
     createChore,
