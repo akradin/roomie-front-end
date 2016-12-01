@@ -3,10 +3,11 @@
 
 
 const createSuccess = (data) => {
-    $('.chore-id').html("ID: " + " " + data.id + "<br>");
-    $('.chore-name').html("NAME: " + " " + data.name + "<br>");
-    $('.chore-due').html("DUE DATE: " + " " + data.due_date + "<br>" );
-    $('.chore-difficulty').html("DIFFICULTY: " + " " + data.difficulty + "<br>");
+    $('.show-chores').hide();
+    $('.chore-id').append("ID: " + " " + data.chore.id + "<br>");
+    $('.chore-name').append("NAME: " + " " + data.chore.name + "<br>");
+    $('.chore-due').append("DUE DATE: " + " " + data.chore.due_date + "<br>" );
+    $('.chore-difficulty').append("DIFFICULTY: " + " " + data.chore.difficulty + "<br>");
 
 };
 
@@ -21,6 +22,7 @@ const showSuccess = function(data){
   for (let i = 0; i < data.length; i++) {
      chores += "NAME: " + " " + data[i].name + "<br>" + "ID: " + " "  + data[i].id + "<br>" + "DUE DATE: " + " " + data[i].due_date + "<br>" + "DIFFICULTY: " + " " + data[i].difficulty + "<br>";
   }
+  $('.show-chores').show();
   $('.show-chores').html(chores);
   $('.chore-id').hide();
   $('.chore-name').hide();

@@ -3,7 +3,6 @@
 const getFormFields = require('../../../lib/get-form-fields');
 const api = require('./chore-api.js');
 const ui = require('./chore-ui.js');
-// const store = require('../store');
 
 
 const onCreateChore = function (event) {
