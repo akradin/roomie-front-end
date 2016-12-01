@@ -18,9 +18,10 @@ const updateSuccess = (data) =>{
 
 
 const showSuccess = function(data){
+  console.log(data.chores);
   let chores = "";
-  for (let i = 0; i < data.length; i++) {
-     chores += "NAME: " + " " + data[i].name + "<br>" + "ID: " + " "  + data[i].id + "<br>" + "DUE DATE: " + " " + data[i].due_date + "<br>" + "DIFFICULTY: " + " " + data[i].difficulty + "<br>";
+  for (let i = 0; i < data.chores.length; i++) {
+     chores += "NAME: " + " " + data.chores[i].name + "<br>" + "ID: " + " "  + data.chores[i].id + "<br>" + "DUE DATE: " + " " + data.chores[i].due_date + "<br>" + "DIFFICULTY: " + " " + data.chores[i].difficulty + "<br>";
   }
   $('.show-chores').show();
   $('.show-chores').html(chores);
