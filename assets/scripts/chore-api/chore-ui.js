@@ -3,10 +3,10 @@
 
 
 const createSuccess = (data) => {
-    $('.chore-id').html("ID: " + " " + data.chore.id + "<br>");
-    $('.chore-name').html("NAME: " + " " + data.chore.name + "<br>");
-    $('.chore-due').html("DUE DATE: " + " " + data.chore.due_date + "<br>" );
-    $('.chore-difficulty').html("DIFFICULTY: " + " " + data.chore.difficulty + "<br>");
+    $('.chore-id').html("ID: " + " " + data.id + "<br>");
+    $('.chore-name').html("NAME: " + " " + data.name + "<br>");
+    $('.chore-due').html("DUE DATE: " + " " + data.due_date + "<br>" );
+    $('.chore-difficulty').html("DIFFICULTY: " + " " + data.difficulty + "<br>");
 
 };
 
@@ -18,8 +18,8 @@ const updateSuccess = (data) =>{
 
 const showSuccess = function(data){
   let chores = "";
-  for (let i = 0; i < data.chores.length; i++) {
-     chores += "NAME: " + " " + data.chores[i].name + "<br>" + "ID: " + " "  + data.chores[i].id + "<br>" + "DUE DATE: " + " " + data.chores[i].due_date + "<br>" + "DIFFICULTY: " + " " + data.chores[i].difficulty + "<br>";
+  for (let i = 0; i < data.length; i++) {
+     chores += "NAME: " + " " + data[i].name + "<br>" + "ID: " + " "  + data[i].id + "<br>" + "DUE DATE: " + " " + data[i].due_date + "<br>" + "DIFFICULTY: " + " " + data[i].difficulty + "<br>";
   }
   $('.show-chores').html(chores);
   $('.chore-id').hide();
