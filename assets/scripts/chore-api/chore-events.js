@@ -9,7 +9,6 @@ const onCreateChore = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
   api.createChore(data)
-
     .then(ui.createSuccess)
     .catch(ui.failure);
 };
@@ -17,7 +16,8 @@ const onCreateChore = function (event) {
 const onUpdateChore = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
-  api.updateChore(data)
+  let id = $(this).data().choreId;
+  api.updateChore(id, data)
     .then(ui.updateSuccess)
     .catch(ui.failure);
 };
@@ -30,7 +30,6 @@ const onShowChores = function (event) {
 };
 
 const onDeleteChore = function (event){
-  // let data = getFormFields(this);
   let id = $(this).data().choreId;
   event.preventDefault();
   api.deleteChore(id)
@@ -38,12 +37,20 @@ const onDeleteChore = function (event){
   .catch(ui.failure);
 };
 
+const showUpdate = (e) => {
+let className = '.chore-update-' + $(e.target).data().choreId;
+$(className).removeClass('hidden');
+
+}
+
 
 const addHandlers = () => {
 $('.chore-submit').on('submit', onCreateChore);
-$('.chore-update').on('submit', onUpdateChore);
+// $('.chore-update').on('submit', onUpdateChore);
 $('.show-chores-button').on('click', onShowChores);
 $('.show-chores').on('click', '.delete-button', onDeleteChore);
+$('.show-chores').on('click','.update-button', showUpdate);
+$('.show-chores').on('submit','.update-form', onUpdateChore);
 };
 
 module.exports = {

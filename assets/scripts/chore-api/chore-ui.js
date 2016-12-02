@@ -12,12 +12,14 @@ const createSuccess = (data) => {
     let chores = { chores:[data]}
     $('.new-chores').html(showNewChore(chores));
     $('.new-chores').show();
+    $('.delete-chore').hide();
 
 };
 
 const updateSuccess = () =>{
   $('.update-chore').show();
   $('.update-chore').html('Chore updated! Click get chores for an updated list.');
+  $('.show-chores').hide();
 };
 
 
@@ -28,7 +30,8 @@ const showSuccess = function(data){
   $('.show-chores').html(showAllChores(chores));
   $('.update-chore').hide();
   $('.delete-chore').hide();
-  $('.new-chores').hide()
+  $('.new-chores').hide();
+  $('.chore-update').hide();
 
 };
 
