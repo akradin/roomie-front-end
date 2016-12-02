@@ -24,14 +24,13 @@ const updateChore = (data) =>
       data,
     });
 
-const deleteChore = (data) =>
+const deleteChore = (id) =>
   $.ajax({
-      url: config.host + '/chores/' + data.chore.chore_id,
+      url: config.host + '/chores/' + id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + store.user.token,
       },
-      data,
     });
 
 const showChores = () =>

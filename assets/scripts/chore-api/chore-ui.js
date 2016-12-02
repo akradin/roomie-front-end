@@ -11,6 +11,7 @@ const createSuccess = (data) => {
     $('.chore-due').show();
     let chores = { chores:[data]}
     $('.new-chores').html(showNewChore(chores));
+    $('.new-chores').show();
 
 };
 
@@ -23,6 +24,7 @@ const updateSuccess = () =>{
 
 const showSuccess = function(data){
   let chores = data;
+  $('.show-chores').show();
   $('.show-chores').html(showAllChores(chores));
   $('.update-chore').hide();
   $('.delete-chore').hide();
@@ -30,9 +32,11 @@ const showSuccess = function(data){
 
 };
 
-const deleteSuccess = (data) => {
+const deleteSuccess = () => {
+  $('.delete-chore').show();
   $('.delete-chore').html('Gonzo!');
-  $('.update-chore').hide();;
+  $('.update-chore').hide();
+  $('.show-chores').hide();
 };
 
 const failure = (error) => {

@@ -30,9 +30,10 @@ const onShowChores = function (event) {
 };
 
 const onDeleteChore = function (event){
-  let data = getFormFields(this);
+  // let data = getFormFields(this);
+  let id = $(this).data().choreId;
   event.preventDefault();
-  api.deleteChore(data)
+  api.deleteChore(id)
   .then(ui.deleteSuccess)
   .catch(ui.failure);
 };
@@ -42,7 +43,7 @@ const addHandlers = () => {
 $('.chore-submit').on('submit', onCreateChore);
 $('.chore-update').on('submit', onUpdateChore);
 $('.show-chores-button').on('click', onShowChores);
-$('.chore-delete').on('submit', onDeleteChore);
+$('.show-chores').on('click', '.delete-button', onDeleteChore);
 };
 
 module.exports = {
