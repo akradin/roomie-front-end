@@ -1,0 +1,16 @@
+{{#each chores as |chore|}}
+<div class="chore-container">
+  <div class="row row-centered">
+    <div class="col-xs-4 col-centered box">
+      <div class="content chore-name">Name: {{chore.chore.name}} </div>
+    </div>
+    <div class="col-xs-4 col-centered box">
+      <div class="content chore-due">Due Date: {{chore.chore.due_date}}</div>
+    </div>
+    <div class="col-xs-4 col-centered box">
+      <div class="content chore-difficulty">Difficulty: {{chore.chore.difficulty}}</div>
+    </div>
+  </div>
+</div>
+
+{{/each}}

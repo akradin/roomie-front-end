@@ -92,7 +92,7 @@
       <form class="chore-submit">
 
         <input type="text" placeholder="chore" id="name-submit" name="chore[name]">
-        <input type="text" placeholder="due date" name="chore[due_date]">
+        <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]">
         <input type="text" placeholder="Difficulty, 1-5" name="chore[difficulty]">
         <input type="submit" value="Submit">
       </form>
@@ -101,19 +101,14 @@
 
         <input type="text" placeholder="chore id" name="chore[chore_id]">
         <input type="text" placeholder="chore" name="chore[name]">
-        <input type="text" placeholder="due date" name="chore[due_date]">
+        <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]">
         <input type="text" placeholder="Difficulty, 1-5" name="chore[difficulty]">
         <input type="submit" value="Update" id="chore-update">
       </form>
       <br>
 
-      <form class="chore-delete">
-
-        <input type="text" placeholder="chore id" name="chore[chore_id]">
-        <input type="submit" value="Delete" id="chore-delete">
-      </form>
       <br>
-<button type="button" class="show-chores-button">Click Me!</button>
+<button type="button" class="show-chores-button">Show Chores</button>
       <div class="chore-id"></div>
       <div class="chore-name"></div>
       <div class="chore-due"></div>
@@ -123,6 +118,8 @@
 
       <div class="update-chore"></div>
       <div class="show-chores"></div>
+      <div class="new-chores"></div>
+      <div class="delete-chore"></div>
       </div>
 
 
@@ -132,24 +129,24 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">SIGN UP DUMMY</h4>
+          <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
       </div>
       <div class="modal-body">
           <form class="sign-up-form">
            <div class="form-group">
-             <label>Internet Mail Desired Location</label>
+             <label>E-Mail</label>
              <input type="email" id="sign-up-email" class="form-control" name="credentials[email]" placeholder="Email">
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword1">Fucking Password</label>
+             <label for="exampleInputPassword1">Password</label>
              <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password]" placeholder="Password">
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword1">Type It Again, Moron</label>
+             <label for="exampleInputPassword1">Repeat Password</label>
              <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password_confirmation]" placeholder="Password">
            </div>
            <button type="submit" class="btn btn-default" id="sign-up-submit">Submit</button>
-           <button type="button" class="btn btn-default" data-dismiss="modal">Mistakes were made</button>
+           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           </form>
           <div class="sign-up-fail"></div>
       </div>
@@ -165,20 +162,20 @@
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">SIGN IN YOU BOZO</h4>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
     </div>
     <div class="modal-body">
         <form class="sign-in-form">
          <div class="form-group">
-           <label> Current Address</label>
-           <input type="email" id="sign-in-email" class="form-control" name="credentials[email]" placeholder="Email">  <!--probably relevant for auth-->
+           <label>E-Mail</label>
+           <input type="email" id="sign-in-email" class="form-control" name="credentials[email]" placeholder="Email">
          </div>
          <div class="form-group">
-           <label for="exampleInputPassword1">P-word</label>
+           <label for="exampleInputPassword1">Password</label>
            <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password]" placeholder="Password">
          </div>
-         <button type="submit" class="btn btn-default" id="sign-in-submit">S to the U to the B MIT!!</button>
-         <button type="button" class="btn btn-default" data-dismiss="modal">Mistakes were made</button>
+         <button type="submit" class="btn btn-default" id="sign-in-submit">Submit</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </form>
         <div class="sign-in-fail"></div>
     </div>
@@ -194,20 +191,20 @@
 <div class="modal-content">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title" id="myModalLabel">NO ONE CARES ABOUT YOUR DATA</h4>
+      <h4 class="modal-title" id="myModalLabel">Change Password</h4>
   </div>
   <div class="modal-body">
       <form class="change-password-form">
        <div class="form-group">
-         <label>Old Insecure Password</label>
-         <input type="password" id="change-password" class="form-control" name="passwords[old]" placeholder="Old Password">  <!--probably relevant for auth-->
+         <label>Old Password</label>
+         <input type="password" id="change-password" class="form-control" name="passwords[old]" placeholder="Old Password">
        </div>
        <div class="form-group">
-         <label for="exampleInputPassword1">New Easily Guessable Password</label>
+         <label for="exampleInputPassword1">New Password</label>
          <input type="password" class="form-control" id="exampleInputPassword1" name="passwords[new]" placeholder="New Password">
        </div>
-       <button type="submit" class="btn btn-default" id="change-pw-submit">Submit-eroni</button>
-       <button type="button" class="btn btn-default" data-dismiss="modal">Mistakes were made</button>
+       <button type="submit" class="btn btn-default" id="change-pw-submit">Submit</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </form>
       <div class="change-pw-fail"></div>
   </div>
