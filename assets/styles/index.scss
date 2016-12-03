@@ -2,5 +2,24 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 form {
-  display: inline-block;
+  margin: 0 auto;
   }
+
+input {
+  border-radius: 5px;
+  height: 35px;
+}
+
+.input-wrapper {
+  float: left;
+  margin-right: 12%;
+}
+
+label {
+  display: inline-block;
+  position: relative;
+}
+
+.difficulty {
+  width: 40px;
+};

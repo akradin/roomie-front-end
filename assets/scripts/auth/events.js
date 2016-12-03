@@ -5,7 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-$('.container').hide()
+$('.container').hide();
 
 // $(window).load(function(){
 //     $('#welcome-form').modal('show');
@@ -38,7 +38,7 @@ const onChangePassword = function (event) {
 const onSignOut = function (event){
     event.preventDefault();
     api.signOut()
-      .then(ui.success)
+      .then(ui.logOutSuccess)
       .catch(ui.failure);
 };
 

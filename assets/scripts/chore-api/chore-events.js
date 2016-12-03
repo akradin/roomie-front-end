@@ -38,19 +38,21 @@ const onDeleteChore = function (event){
 };
 
 const showUpdate = (e) => {
-let className = '.chore-update-' + $(e.target).data().choreId;
-$(className).removeClass('hidden');
+  let className = '.chore-update-' + $(e.target).data().choreId;
+  $(className).removeClass('hidden');
+  $('.dpicker').datepicker({
+  format: "yyyy-mm-dd"
+  });
 
-}
-
+};
 
 const addHandlers = () => {
-$('.chore-submit').on('submit', onCreateChore);
-// $('.chore-update').on('submit', onUpdateChore);
-$('.show-chores-button').on('click', onShowChores);
-$('.show-chores').on('click', '.delete-button', onDeleteChore);
-$('.show-chores').on('click','.update-button', showUpdate);
-$('.show-chores').on('submit','.update-form', onUpdateChore);
+  $('.chore-submit').on('submit', onCreateChore);
+  // $('.chore-update').on('submit', onUpdateChore);
+  $('.show-chores-button').on('click', onShowChores);
+  $('.show-chores').on('click', '.delete-button', onDeleteChore);
+  $('.show-chores').on('click','.update-button', showUpdate);
+  $('.show-chores').on('submit','.update-form', onUpdateChore);
 };
 
 module.exports = {
