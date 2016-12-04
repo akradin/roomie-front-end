@@ -7,7 +7,7 @@
 
 const authEvents = require('./auth/events.js');
 const choreEvents = require('./chore-api/chore-events.js');
-const groupEvents = require('./group-api/group-events.js')
+const groupEvents = require('./group-api/group-events.js');
 
 // On document ready
 $(() => {

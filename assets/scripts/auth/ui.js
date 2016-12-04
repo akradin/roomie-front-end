@@ -19,9 +19,15 @@ const signInSuccess = (data) => {
   success(data);
 };
 
+const logOutSuccess = () => {
+  $('.container').hide();
+  $('#log-out').modal('hide');
+};
+
 
 module.exports = {
   failure,
   success,
   signInSuccess,
+  logOutSuccess,
 };
