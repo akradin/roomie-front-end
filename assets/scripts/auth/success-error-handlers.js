@@ -9,6 +9,7 @@ let authSuccess = function(){
   $('.sign-up-fail').hide();
   $('.sign-in-fail').hide();
   $('.change-pw-fail').hide();
+  $('.log-in').hide();
   $('.dpicker').datepicker({
   format: "yyyy-mm-dd"
 });

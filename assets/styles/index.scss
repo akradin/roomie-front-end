@@ -1,6 +1,12 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+h1 {
+  display: inline;
+}
+
+
+
 form {
   margin: 0 auto;
   }
@@ -22,4 +28,8 @@ label {
 
 .difficulty {
   width: 40px;
+};
+
+.log-in {
+  float: right;
 };
