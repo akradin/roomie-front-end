@@ -80,6 +80,8 @@
 
 
       <p>Hey! Welcome to Roomie!</p>
+      <br>
+      <p class="log-in">Looks like you need to Sign Up or Sign in to get started!</p>
       <div class="container">
 
       <!--<form class="group-submit">
@@ -91,24 +93,36 @@
 
       <form class="chore-submit">
 
-        <input type="text" placeholder="chore" id="name-submit" name="chore[name]">
-        <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]">
-        <input type="text" placeholder="Difficulty, 1-5" name="chore[difficulty]">
-        <input type="submit" value="Submit">
+
+        <div class="input-wrapper">
+          <p>Chore</p>
+          <input type="text" placeholder="name" id="name-submit" name="chore[name]">
+        </div>
+        <div class="input-wrapper">
+          <p>Due Date</p>
+          <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]" class="dpicker">
+        </div>
+        <div class="input-wrapper">
+          <p>Difficulty</p>
+          <input type="number" min="1" max="5" class="difficulty" placeholder="1-5" name="chore[difficulty]">
+          <input type="submit" value="Submit" class="prevent-default btn btn-primary">
+        </div>
+
+
       </form>
       <br>
-      <form class="chore-update">
+    <!--  <form class="chore-update">
 
         <input type="text" placeholder="chore id" name="chore[chore_id]">
         <input type="text" placeholder="chore" name="chore[name]">
         <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]">
         <input type="text" placeholder="Difficulty, 1-5" name="chore[difficulty]">
         <input type="submit" value="Update" id="chore-update">
-      </form>
+      </form> -->
       <br>
 
       <br>
-<button type="button" class="show-chores-button">Show Chores</button>
+<button type="button" class="show-chores-button btn btn-info btn-lg btn-block">Show Chores</button>
       <div class="chore-id"></div>
       <div class="chore-name"></div>
       <div class="chore-due"></div>
@@ -145,7 +159,7 @@
              <label for="exampleInputPassword1">Repeat Password</label>
              <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password_confirmation]" placeholder="Password">
            </div>
-           <button type="submit" class="btn btn-default" id="sign-up-submit">Submit</button>
+           <button type="submit" class="btn btn-primary" id="sign-up-submit">Submit</button>
            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           </form>
           <div class="sign-up-fail"></div>
@@ -174,7 +188,7 @@
            <label for="exampleInputPassword1">Password</label>
            <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password]" placeholder="Password">
          </div>
-         <button type="submit" class="btn btn-default" id="sign-in-submit">Submit</button>
+         <button type="submit" class="btn btn-primary" id="sign-in-submit">Submit</button>
          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </form>
         <div class="sign-in-fail"></div>
@@ -203,7 +217,7 @@
          <label for="exampleInputPassword1">New Password</label>
          <input type="password" class="form-control" id="exampleInputPassword1" name="passwords[new]" placeholder="New Password">
        </div>
-       <button type="submit" class="btn btn-default" id="change-pw-submit">Submit</button>
+       <button type="submit" class="btn btn-primary" id="change-pw-submit">Submit</button>
        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </form>
       <div class="change-pw-fail"></div>
@@ -225,8 +239,8 @@
       </div>
     <div class="modal-body">
     <form class="log-out">
-     <button type="submit" class="btn btn-default">Yup, let me leave</button>
-     <button type="button" class="btn btn-default" data-dismiss="modal">Mistakes were made</button>
+     <button type="submit" class="btn btn-primary">Log Out</button>
+     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
     </form>
 </div>
 </div>

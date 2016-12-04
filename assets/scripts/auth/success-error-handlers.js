@@ -1,4 +1,6 @@
 'use strict';
+const click = require('../prevent-click.js');
+
 let authSuccess = function(){
   $('#sign-in-form').modal('hide');
   $('#sign-up-form').modal('hide');
@@ -7,6 +9,10 @@ let authSuccess = function(){
   $('.sign-up-fail').hide();
   $('.sign-in-fail').hide();
   $('.change-pw-fail').hide();
+  $('.log-in').hide();
+  $('.dpicker').datepicker({
+  format: "yyyy-mm-dd"
+});
 };
 
 
@@ -16,7 +22,7 @@ let authFail = function(){
   $('.change-pw-fail').show();
   $('.sign-up-fail').html('Oops, something went wrong, make sure all of your info is correct.');
   $('.sign-in-fail').html('Oops, something went wrong, make sure all of your info is correct.');
-  $('.change-pw-fail').html('Oops, something went wrong, make sure all of your info is correct.')
+  $('.change-pw-fail').html('Oops, something went wrong, make sure all of your info is correct.');
 }
 module.exports = {
   authSuccess,

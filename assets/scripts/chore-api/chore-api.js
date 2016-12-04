@@ -14,9 +14,9 @@ const createChore = (data) =>
   });
 
 
-const updateChore = (data) =>
+const updateChore = (id, data) =>
   $.ajax({
-      url: config.host + '/chores/' + data.chore.chore_id,
+      url: config.host + '/chores/' + id,
       method: 'PATCH',
       headers: {
         Authorization: 'Token token=' + store.user.token,

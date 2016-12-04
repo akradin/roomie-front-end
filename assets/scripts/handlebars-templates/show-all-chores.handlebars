@@ -10,11 +10,18 @@
     <div class="col-xs-4 col-centered box">
       <div class="content chore-difficulty">Difficulty: {{chore.difficulty}}</div>
     </div>
-    <div class="col-xs-4 col-centered box">
-      <div class="content chore-difficulty">ID: {{chore.id}}</div>
-    </div>
   </div>
-  <button type="button" class="update-button">Update</button> <button type="button" data-chore-id="{{chore.id}}" class="delete-button">Delete</button>
+  <button type="button" class="update-button btn btn-primary" data-chore-id="{{chore.id}}">Update</button> <button type="button" data-chore-id="{{chore.id}}" class="delete-button btn btn-success">Mark as Complete</button>
+  <div class="show-chore">
+    <br>
+
+  <form class="chore-update-{{chore.id}} hidden form-group update-form" data-chore-id="{{chore.id}}">
+    <input type="text" placeholder="chore" name="chore[name]">
+    <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]" class="dpicker">
+  <input type="number" min="1" max="5" placeholder="Difficulty, 1-5" name="chore[difficulty]" class="difficulty">
+  <button type="submit" class="btn btn-primary btn-lg btn-block update-button-2 prevent-default" data-chore-id="{{chore.id}}">Update</button>
+  </form>
 </div>
+<hr>
 
 {{/each}}
