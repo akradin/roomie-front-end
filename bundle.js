@@ -56,6 +56,8 @@ webpackJsonp([0],[
 	var ui = __webpack_require__(9);
 
 	$('.container').hide();
+	$('.change-password-button').hide();
+	$('.log-out-button').hide();
 
 	// $(window).load(function(){
 	//     $('#welcome-form').modal('show');
@@ -259,12 +261,17 @@ webpackJsonp([0],[
 	var signInSuccess = function signInSuccess(data) {
 	  $('.container').show();
 	  store.user = data.user;
+	  $('.log-in').hide();
+	  $('.change-password-button').show();
+	  $('.log-out-button').show();
 	  success(data);
 	};
 
 	var logOutSuccess = function logOutSuccess() {
 	  $('.container').hide();
 	  $('#log-out').modal('hide');
+	  $('.change-password-button').hide();
+	  $('.log-out-button').hide();
 	};
 
 	module.exports = {
@@ -291,7 +298,6 @@ webpackJsonp([0],[
 	  $('.sign-up-fail').hide();
 	  $('.sign-in-fail').hide();
 	  $('.change-pw-fail').hide();
-	  $('.log-in').hide();
 	  $('.dpicker').datepicker({
 	    format: "yyyy-mm-dd"
 	  });
