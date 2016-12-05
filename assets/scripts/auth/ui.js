@@ -16,12 +16,17 @@ const failure = (error) => {
 const signInSuccess = (data) => {
   $('.container').show();
   store.user = data.user;
+  $('.log-in').hide();
+  $('.change-password-button').show();
+  $('.log-out-button').show();
   success(data);
 };
 
 const logOutSuccess = () => {
   $('.container').hide();
   $('#log-out').modal('hide');
+  $('.change-password-button').hide();
+  $('.log-out-button').hide();
 };
 
 
