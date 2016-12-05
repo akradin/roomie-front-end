@@ -16,9 +16,9 @@
     <br>
 
   <form class="chore-update-{{chore.id}} hidden form-group update-form" data-chore-id="{{chore.id}}">
-    <input type="text" placeholder="chore" name="chore[name]">
-    <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]" class="dpicker">
-  <input type="number" min="1" max="5" placeholder="Difficulty, 1-5" name="chore[difficulty]" class="difficulty">
+    <input type="text" placeholder="chore" name="chore[name]" value={{chore.name}}>
+    <input type="text" name="chore[due_date]" class="dpicker" value={{chore.due_date}} >
+  <input type="number" min="1" max="5" name="chore[difficulty]" class="difficulty" value={{chore.difficulty}}>
   <button type="submit" class="btn btn-primary btn-lg btn-block update-button-2 prevent-default" data-chore-id="{{chore.id}}">Update</button>
   </form>
 </div>
