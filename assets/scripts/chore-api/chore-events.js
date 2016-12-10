@@ -46,6 +46,11 @@ const showUpdate = (e) => {
 
 };
 
+// const changeText = (e) => {
+//   let className = '.content-' + $(e.target).data().choreId;
+//   $(className).css('text-decoration','line-through');
+// }
+
 const addHandlers = () => {
   $('.chore-submit').on('submit', onCreateChore);
   // $('.chore-update').on('submit', onUpdateChore);
@@ -53,6 +58,7 @@ const addHandlers = () => {
   $('.show-chores').on('click', '.delete-button', onDeleteChore);
   $('.show-chores').on('click','.update-button', showUpdate);
   $('.show-chores').on('submit','.update-form', onUpdateChore);
+  // $('.show-chores').on('click', '.complete-chore-button', changeText)
 };
 
 module.exports = {

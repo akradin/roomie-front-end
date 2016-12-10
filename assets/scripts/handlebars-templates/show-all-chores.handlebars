@@ -2,23 +2,35 @@
 <div class="chore-container">
   <div class="row row-centered">
     <div class="col-xs-4 col-centered box">
-      <div class="content chore-name">Name: {{chore.name}} </div>
+      <div class="content-{{chore.id}} content chore-name">Name: {{chore.name}} </div>
     </div>
     <div class="col-xs-4 col-centered box">
-      <div class="content chore-due">Due Date: {{chore.due_date}}</div>
+      <div class="content-{{chore.id}} content chore-due">Due Date: {{chore.due_date}}</div>
     </div>
     <div class="col-xs-4 col-centered box">
-      <div class="content chore-difficulty">Difficulty: {{chore.difficulty}}</div>
+      <div class="content-{{chore.id}} chore-difficulty">Difficulty: {{chore.difficulty}}</div>
     </div>
   </div>
-  <button type="button" class="update-button btn btn-primary" data-chore-id="{{chore.id}}">Update</button> <button type="button" data-chore-id="{{chore.id}}" class="delete-button btn btn-success">Mark as Complete</button>
+<div class="button-container">
+  <div class="row row-centered">
+    <div class="col-xs-4 col-centered box">
+      <button type="button" class="center-button update-button btn btn-primary" data-chore-id="{{chore.id}}">Update</button>
+    </div>
+    <div class="col-xs-4 col-centered box complete-chore">
+      <button type="button" class="complete-chore-button btn btn-success" data-chore-id="{{chore.id}}">Mark as Complete</button>
+    </div>
+    <div class="col-xs-4 col-centered box">
+     <button type="button" data-chore-id="{{chore.id}}" class="center-button delete-button btn btn-danger">Delete</button>
+   </div>
+  </div>
+</div>
   <div class="show-chore">
     <br>
 
   <form class="chore-update-{{chore.id}} hidden form-group update-form" data-chore-id="{{chore.id}}">
-    <input type="text" placeholder="chore" name="chore[name]">
-    <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]" class="dpicker">
-  <input type="number" min="1" max="5" placeholder="Difficulty, 1-5" name="chore[difficulty]" class="difficulty">
+    <input type="text" value={{chore.name}} name="chore[name]">
+    <input type="text" value={{chore.due_date}} name="chore[due_date]" class="dpicker">
+  <input type="number" min="1" max="5" value={{chore.difficulty}} name="chore[difficulty]" class="difficulty">
   <button type="submit" class="btn btn-primary btn-lg btn-block update-button-2 prevent-default" data-chore-id="{{chore.id}}">Update</button>
   </form>
 </div>

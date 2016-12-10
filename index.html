@@ -78,9 +78,8 @@
       <h1>Roomie</h1>
 
 
-
+    <div>
       <p>Hey! Welcome to Roomie!</p>
-      <br>
       <p class="log-in">Looks like you need to Sign Up or Sign in to get started!</p>
       <div class="container">
 
@@ -90,10 +89,8 @@
       </form> -->
 
       <br>
-
-      <form class="chore-submit">
-
-
+<!--sort of working original form
+   <form class="chore-submit">
         <div class="input-wrapper">
           <p>Chore</p>
           <input type="text" placeholder="name" id="name-submit" name="chore[name]">
@@ -107,22 +104,37 @@
           <input type="number" min="1" max="5" class="difficulty" placeholder="1-5" name="chore[difficulty]">
           <input type="submit" value="Submit" class="prevent-default btn btn-primary">
         </div>
-
-
       </form>
       <br>
-    <!--  <form class="chore-update">
+    -->
 
-        <input type="text" placeholder="chore id" name="chore[chore_id]">
-        <input type="text" placeholder="chore" name="chore[name]">
-        <input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]">
-        <input type="text" placeholder="Difficulty, 1-5" name="chore[difficulty]">
-        <input type="submit" value="Update" id="chore-update">
-      </form> -->
-      <br>
+<!--attempt to get bootstrap form working-->
+
+  <div class="container game-board">
+    <form class="chore-submit">
+    <div class="row row-centered">
+      <div class="col-xs-3 col-centered box">
+        <div class="content"><input type="text" placeholder="name" id="name-submit" name="chore[name]"></div>
+      </div>
+      <div class="col-xs-3 col-centered box">
+        <div class="content"><input type="text" placeholder="DD-MM-YYYY" name="chore[due_date]" class="dpicker"></div>
+      </div>
+      <div class="col-xs-3 col-centered box difficulty-box">
+        <div class="content"><input type="number" min="1" max="5" class="difficulty" placeholder="1-5" name="chore[difficulty]"></div>
+      </div>
+      <div class="col-xs-3 col-centered box">
+        <div class="content"><input type="submit" value="Submit" class="prevent-default btn btn-primary"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</form>
+
 
       <br>
 <button type="button" class="show-chores-button btn btn-info btn-lg btn-block">Show Chores</button>
+
+<!--divs for jquery-->
       <div class="chore-id"></div>
       <div class="chore-name"></div>
       <div class="chore-due"></div>

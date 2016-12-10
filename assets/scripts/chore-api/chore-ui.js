@@ -14,6 +14,7 @@ const createSuccess = (data) => {
     $('.new-chores').show();
     $('.delete-chore').hide();
     $('.chore-id').hide();
+    $('.show-chores-button').show(500);
 };
 
 const updateSuccess = () =>{
@@ -21,19 +22,21 @@ const updateSuccess = () =>{
   $('.update-chore').html('Chore updated! Click get chores for an updated list.');
   $('.show-chores').hide();
   $('.chore-id').hide();
+  $('.show-chores-button').show(500);
 };
 
 
 
 const showSuccess = function(data){
   let chores = data;
-  $('.show-chores').show();
+  $('.show-chores').slideDown(500);
   $('.show-chores').html(showAllChores(chores));
   $('.update-chore').hide();
   $('.delete-chore').hide();
   $('.new-chores').hide();
   $('.chore-update').hide();
   $('.chore-id').hide();
+  $('.show-chores-button').hide();
 
 };
 
@@ -43,6 +46,7 @@ const deleteSuccess = () => {
   $('.update-chore').hide();
   $('.show-chores').hide();
   $('.chore-id').hide();
+  $('.show-chores-button').show(500);
 };
 
 const failure = (error) => {

@@ -5,7 +5,9 @@ h1 {
   display: inline;
 }
 
-
+p {
+  display: inline;
+}
 
 form {
   margin: 0 auto;
@@ -26,10 +28,21 @@ label {
   position: relative;
 }
 
-.difficulty {
-  width: 40px;
-};
 
 .log-in {
   float: right;
 };
+.difficulty-box {
+  width: 8%;
+}
+.difficulty {
+  width: 40px
+}
+
+.show-chores-button:hover {
+  opacity: .5
+}
+
+.center-button {
+  margin: 0 auto;
+}

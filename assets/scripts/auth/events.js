@@ -5,6 +5,9 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
+const cui = require('../chore-api/chore-ui.js');
+const capi = require('../chore-api/chore-api.js');
+
 $('.container').hide();
 $('.change-password-button').hide();
 $('.log-out-button').hide();
@@ -17,7 +20,15 @@ const onSignUp = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
   api.signUp(data)
-    .then(ui.success)
+    .then((response)=> {
+      ui.success(response);
+      return api.signIn(data);
+    })
+    .then((response) => {
+      ui.signInSuccess(response);
+      return capi.showChores();
+    })
+    .then(cui.showSuccess)
     .catch(ui.failure);
 };
 
@@ -25,7 +36,11 @@ const onSignIn = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
   api.signIn(data)
-    .then(ui.signInSuccess)
+    .then((response)=>{
+      ui.signInSuccess(response);
+      return capi.showChores();
+    })
+    .then(cui.showSuccess)
     .catch(ui.failure);
 };
 
