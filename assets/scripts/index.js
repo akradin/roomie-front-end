@@ -14,5 +14,6 @@ $(() => {
   authEvents.addHandlers();
   choreEvents.addHandlers();
   groupEvents.addHandlers();
-  // $('#welcome-modal').modal('show')
+  $('#welcome-modal').modal('show');
+
 });

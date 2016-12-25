@@ -18,10 +18,10 @@ const createSuccess = (data) => {
 };
 
 const updateSuccess = () =>{
-  $('.update-chore').show();
-  $('.show-chores').hide();
-  $('.chore-id').hide();
-  $('.show-chores-button').show(500);
+  // $('.update-chore').show();
+  // $('.show-chores').hide();
+  // $('.chore-id').hide();
+  // $('.show-chores-button').show(500);
   $('.modal-backdrop').remove();
 };
 
@@ -49,8 +49,6 @@ const showSuccess = function(data){
 };
 
 const deleteSuccess = () => {
-  $('.delete-chore').show();
-  $('.delete-chore').html('Gonzo!');
   $('.update-chore').hide();
   $('.show-chores').hide();
   $('.chore-id').hide();

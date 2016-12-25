@@ -2,26 +2,26 @@
 <div class="chore-container">
   <div class="row row-centered">
     <div class="col-xs-4 col-centered box">
-      <div class="content-{{chore.id}} content chore-name">Name: {{chore.name}} </div>
+      <div class="content-{{chore.id}} completed-{{chore.completed}} content chore-name">Name: {{chore.name}} </div>
     </div>
     <div class="col-xs-4 col-centered box">
-      <div class="content-{{chore.id}} content chore-due">Due Date: {{chore.due_date}}</div>
+      <div class="content-{{chore.id}} completed-{{chore.completed}} content chore-due">Due Date: {{chore.due_date}}</div>
     </div>
     <div class="col-xs-4 col-centered box">
-      <div class="content-{{chore.id}} chore-difficulty">Difficulty: {{chore.difficulty}}</div>
+      <div class="content-{{chore.id}} completed-{{chore.completed}} chore-difficulty">Difficulty: {{chore.difficulty}}</div>
     </div>
   </div>
 </div>
 <div class="button-container">
   <div class="row row-centered">
     <div class="col-xs-4 col-centered box">
-      <button type="button" class="center-button update-button btn btn-primary" data-chore-id="{{chore.id}}">Update</button>
+      <button type="button" class="center-button update-button btn btn-primary hvr-grow" data-chore-id="{{chore.id}}">Update</button>
     </div>
     <div class="col-xs-4 col-centered box complete-chore">
-      <button type="button" class="complete-chore-button btn btn-success check-{{chore.completed}}" data-chore-id="{{chore.id}}" data-completed="{{chore.completed}}">Mark as Complete</button>
+      <button type="button" class="complete-chore-button btn btn-success check-{{chore.completed}} hvr-grow" data-chore-id="{{chore.id}}" data-completed="{{chore.completed}}">Mark as Complete</button>
     </div>
     <div class="col-xs-4 col-centered box">
-     <button type="button" data-chore-id="{{chore.id}}" class="center-button delete-button btn btn-danger">Delete</button>
+     <button type="button" data-chore-id="{{chore.id}}" class="center-button delete-button btn btn-danger hvr-grow">Delete</button>
    </div>
   </div>
 </div>
