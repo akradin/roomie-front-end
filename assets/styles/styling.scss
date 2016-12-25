@@ -1,0 +1,67 @@
+h1 {
+  display: inline;
+}
+
+p {
+  display: inline;
+}
+
+form {
+  margin: 0 auto;
+  }
+
+input {
+  border-radius: 5px;
+  height: 35px;
+}
+
+.input-wrapper {
+  float: left;
+  margin-right: 12%;
+}
+
+label {
+  display: inline-block;
+  position: relative;
+}
+
+
+.log-in {
+  float: right;
+};
+.difficulty-box {
+  width: 8%;
+}
+.difficulty {
+  width: 40px
+}
+
+.show-chores-button:hover {
+  opacity: .5
+}
+
+.center-button {
+  margin: 0 auto;
+}
+
+body {
+  background-color: $graygreen;
+
+}
+
+.top-text {
+  color: white;
+}
+
+.navbar {
+  background-color: $tealski;
+  width: 100%;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $black;
+}
+
+#myModalLabel, input{
+  color: $black;
+}

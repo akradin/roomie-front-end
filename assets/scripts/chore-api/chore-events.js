@@ -9,7 +9,7 @@ const onCreateChore = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
   api.createChore(data)
-    .then(ui.createSuccess)
+    .then((ui.createSuccess))
     .catch(ui.failure);
 };
 
@@ -18,7 +18,11 @@ const onUpdateChore = function (event) {
   let data = getFormFields(this);
   let id = $(this).data().choreId;
   api.updateChore(id, data)
-    .then(ui.updateSuccess)
+    .then(()=>{
+      ui.updateSuccess();
+      return api.showChores();
+    })
+    .then(ui.showSuccess)
     .catch(ui.failure);
 };
 
@@ -37,19 +41,32 @@ const onDeleteChore = function (event){
   .catch(ui.failure);
 };
 
+const onCompleteChore = function(event){
+  event.preventDefault();
+  let id = $(this).data().choreId;
+  console.log($(this).data().completed);
+  let data = {chore: { completed: !$(this).data().completed}};
+  api.completeChore(id, data)
+    .then(()=>{
+      ui.updateSuccess();
+      return api.showChores();
+    })
+    .then(ui.showSuccess)
+    .catch(ui.failure);
+
+};
+
 const showUpdate = (e) => {
-  let className = '.chore-update-' + $(e.target).data().choreId;
-  $(className).removeClass('hidden');
+  let className = '.show-chore-modal-' + $(e.target).data().choreId;
+  // $(className).removeClass('hidden');
+  $(className).modal('show');
   $('.dpicker').datepicker({
   format: "yyyy-mm-dd"
   });
 
 };
 
-// const changeText = (e) => {
-//   let className = '.content-' + $(e.target).data().choreId;
-//   $(className).css('text-decoration','line-through');
-// }
+
 
 const addHandlers = () => {
   $('.chore-submit').on('submit', onCreateChore);
@@ -58,7 +75,7 @@ const addHandlers = () => {
   $('.show-chores').on('click', '.delete-button', onDeleteChore);
   $('.show-chores').on('click','.update-button', showUpdate);
   $('.show-chores').on('submit','.update-form', onUpdateChore);
-  // $('.show-chores').on('click', '.complete-chore-button', changeText)
+  $('.show-chores').on('click', '.complete-chore-button', onCompleteChore);
 };
 
 module.exports = {

@@ -10,8 +10,10 @@ let authSuccess = function(){
   $('.sign-in-fail').hide();
   $('.change-pw-fail').hide();
   $('.dpicker').datepicker({
-  format: "yyyy-mm-dd"
-});
+    format: "yyyy-mm-dd",
+    minDate: 0,
+    defaultDate: +7
+  });
 };
 
 
@@ -21,7 +23,7 @@ let authFail = function(){
   $('.change-pw-fail').show();
   $('.sign-up-fail').html('Oops, something went wrong, make sure all of your info is correct.');
   $('.sign-in-fail').html('Oops, something went wrong, make sure all of your info is correct.');
-  $('.change-pw-fail').html('Oops, something went wrong, make sure all of your info is correct.');
+  $('.ch;ange-pw-fail').html('Oops, something went wrong, make sure all of your info is correct.');
 }
 module.exports = {
   authSuccess,

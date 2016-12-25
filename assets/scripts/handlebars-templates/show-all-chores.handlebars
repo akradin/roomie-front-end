@@ -11,29 +11,64 @@
       <div class="content-{{chore.id}} chore-difficulty">Difficulty: {{chore.difficulty}}</div>
     </div>
   </div>
+</div>
 <div class="button-container">
   <div class="row row-centered">
     <div class="col-xs-4 col-centered box">
       <button type="button" class="center-button update-button btn btn-primary" data-chore-id="{{chore.id}}">Update</button>
     </div>
     <div class="col-xs-4 col-centered box complete-chore">
-      <button type="button" class="complete-chore-button btn btn-success" data-chore-id="{{chore.id}}">Mark as Complete</button>
+      <button type="button" class="complete-chore-button btn btn-success check-{{chore.completed}}" data-chore-id="{{chore.id}}" data-completed="{{chore.completed}}">Mark as Complete</button>
     </div>
     <div class="col-xs-4 col-centered box">
      <button type="button" data-chore-id="{{chore.id}}" class="center-button delete-button btn btn-danger">Delete</button>
    </div>
   </div>
 </div>
-  <div class="show-chore">
+  <div class="show-chore"></div>
     <br>
 
-  <form class="chore-update-{{chore.id}} hidden form-group update-form" data-chore-id="{{chore.id}}">
+<!--  <form class="chore-update-{{chore.id}} hidden form-group update-form" data-chore-id="{{chore.id}}">
     <input type="text" value={{chore.name}} name="chore[name]">
     <input type="text" value={{chore.due_date}} name="chore[due_date]" class="dpicker">
   <input type="number" min="1" max="5" value={{chore.difficulty}} name="chore[difficulty]" class="difficulty">
   <button type="submit" class="btn btn-primary btn-lg btn-block update-button-2 prevent-default" data-chore-id="{{chore.id}}">Update</button>
   </form>
 </div>
-<hr>
+<hr>-->
+
+
+<div class="modal fade show-chore-modal-{{chore.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Update Chore</h4>
+      </div>
+      <div class="modal-body">
+          <form class="chore-update-{{chore.id}} form-group update-form" data-chore-id="{{chore.id}}">
+           <div class="form-group">
+             <label>Chore Name</label>
+             <input type="text" value={{chore.name}} name="chore[name]">
+           </div>
+           <div class="form-group">
+             <label for="exampleInputPassword1">Due Date</label>
+             <input type="text" value={{chore.due_date}} name="chore[due_date]" class="dpicker">
+           </div>
+           <div class="form-group">
+             <label for="exampleInputPassword1">Difficulty</label>
+             <input type="number" min="1" max="5" value={{chore.difficulty}} name="chore[difficulty]" class="difficulty">
+           </div>
+           <button type="submit" class="btn btn-primary update-button-2 prevent-default" data-chore-id="{{chore.id}}">Update</button>
+           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </form>
+          <div class="sign-up-fail"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 {{/each}}

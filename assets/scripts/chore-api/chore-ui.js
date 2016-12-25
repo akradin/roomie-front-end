@@ -19,10 +19,18 @@ const createSuccess = (data) => {
 
 const updateSuccess = () =>{
   $('.update-chore').show();
-  $('.update-chore').html('Chore updated! Click get chores for an updated list.');
   $('.show-chores').hide();
   $('.chore-id').hide();
   $('.show-chores-button').show(500);
+  $('.modal-backdrop').remove();
+};
+
+const updateCompleteSuccess = () =>{
+  // $('.update-chore').show();
+  // $('.show-chores').hide();
+  // $('.chore-id').hide();
+  // $('.show-chores-button').show(500);
+  // $('.content-'+id).css('text-decoration','line-through');
 };
 
 
@@ -59,5 +67,6 @@ module.exports = {
   failure,
   updateSuccess,
   createSuccess,
-  showSuccess
+  showSuccess,
+  updateCompleteSuccess
 };
