@@ -3,6 +3,10 @@ const showNewChore = require('../handlebars-templates/show-new-chore.handlebars'
 const showAllChores = require('../handlebars-templates/show-all-chores.handlebars');
 
 
+const clearForms = () => {
+  $('input').val('');
+};
+
 const createSuccess = (data) => {
     $('.show-chores').hide();
     $('.chore-id').show();
@@ -15,6 +19,7 @@ const createSuccess = (data) => {
     $('.delete-chore').hide();
     $('.chore-id').hide();
     $('.show-chores-button').show(500);
+    clearForms();
 };
 
 const updateSuccess = () =>{

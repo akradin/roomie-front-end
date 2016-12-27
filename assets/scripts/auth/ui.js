@@ -37,6 +37,7 @@ const logOutSuccess = () => {
   $('.sign-up-button').show();
   $('.sign-in-button').show();
   $('.dropdown-toggle').text("Sign Up / Sign In");
+  clearForms();
 };
 
 
