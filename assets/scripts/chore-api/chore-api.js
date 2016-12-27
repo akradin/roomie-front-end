@@ -24,6 +24,16 @@ const updateChore = (id, data) =>
       data,
     });
 
+const completeChore = (id, data) =>
+  $.ajax({
+      url: config.host + '/chores/' + id,
+      method: 'PATCH',
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+      data,
+    });
+
 const deleteChore = (id) =>
   $.ajax({
       url: config.host + '/chores/' + id,
@@ -43,9 +53,12 @@ const showChores = () =>
   });
 
 
+
+
   module.exports ={
     createChore,
     updateChore,
     showChores,
+    completeChore,
     deleteChore
   };

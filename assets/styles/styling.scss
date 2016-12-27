@@ -1,0 +1,103 @@
+h1 {
+  display: inline;
+}
+
+p {
+  display: inline;
+}
+
+form {
+  margin: 0 auto;
+  }
+
+input {
+  border-radius: 5px;
+  height: 35px;
+}
+
+.input-wrapper {
+  float: left;
+  margin-right: 12%;
+}
+
+label {
+  display: inline-block;
+  position: relative;
+}
+
+
+.log-in {
+  float: right;
+}
+
+.difficulty-box {
+  width: 8%;
+}
+
+.difficulty {
+  width: 40px;
+}
+
+.show-chores-button:hover {
+  opacity: .5;
+}
+
+.center-button {
+  margin: 0 auto;
+}
+
+body {
+  background-color: $graygreen;
+
+}
+
+.top-text {
+  color: $white;
+}
+
+.navbar {
+  background-color: $tealski;
+  width: 100%;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $black;
+}
+
+#myModalLabel,
+input {
+  color: $black;
+}
+
+#welcome-modal {
+  color: $black;
+}
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+
+.completed-true {
+  text-decoration: line-through;
+}
+
+.information {
+  font-size: 16px
+}
+
+.update-form {
+  text-align: center;
+}

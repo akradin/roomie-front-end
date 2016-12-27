@@ -3,6 +3,10 @@ const showNewChore = require('../handlebars-templates/show-new-chore.handlebars'
 const showAllChores = require('../handlebars-templates/show-all-chores.handlebars');
 
 
+const clearForms = () => {
+  $('input').val('');
+};
+
 const createSuccess = (data) => {
     $('.show-chores').hide();
     $('.chore-id').show();
@@ -14,35 +18,46 @@ const createSuccess = (data) => {
     $('.new-chores').show();
     $('.delete-chore').hide();
     $('.chore-id').hide();
+    $('.show-chores-button').show(500);
+    clearForms();
 };
 
 const updateSuccess = () =>{
-  $('.update-chore').show();
-  $('.update-chore').html('Chore updated! Click get chores for an updated list.');
-  $('.show-chores').hide();
-  $('.chore-id').hide();
+  // $('.update-chore').show();
+  // $('.show-chores').hide();
+  // $('.chore-id').hide();
+  // $('.show-chores-button').show(500);
+  $('.modal-backdrop').remove();
+};
+
+const updateCompleteSuccess = () =>{
+  // $('.update-chore').show();
+  // $('.show-chores').hide();
+  // $('.chore-id').hide();
+  // $('.show-chores-button').show(500);
+  // $('.content-'+id).css('text-decoration','line-through');
 };
 
 
 
 const showSuccess = function(data){
   let chores = data;
-  $('.show-chores').show();
+  $('.show-chores').slideDown(500);
   $('.show-chores').html(showAllChores(chores));
   $('.update-chore').hide();
   $('.delete-chore').hide();
   $('.new-chores').hide();
   $('.chore-update').hide();
   $('.chore-id').hide();
+  $('.show-chores-button').hide();
 
 };
 
 const deleteSuccess = () => {
-  $('.delete-chore').show();
-  $('.delete-chore').html('Gonzo!');
   $('.update-chore').hide();
   $('.show-chores').hide();
   $('.chore-id').hide();
+  $('.show-chores-button').show(500);
 };
 
 const failure = (error) => {
@@ -55,5 +70,6 @@ module.exports = {
   failure,
   updateSuccess,
   createSuccess,
-  showSuccess
+  showSuccess,
+  updateCompleteSuccess
 };
