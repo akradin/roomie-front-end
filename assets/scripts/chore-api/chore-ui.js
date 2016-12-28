@@ -4,7 +4,7 @@ const showAllChores = require('../handlebars-templates/show-all-chores.handlebar
 
 
 const clearForms = () => {
-  $('input').val('');
+  $('.clear-forms').val('');
 };
 
 const createSuccess = (data) => {
